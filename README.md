@@ -52,12 +52,12 @@ knitr::kable(head(dplyr::select(xcms_time, -timings)))
 
 | package      |        med |        min |        max | type  | which |
 | :----------- | ---------: | ---------: | ---------: | :---- | :---- |
-| xcms         | 4976578976 | 4798341210 | 5014781815 | pkg   | self  |
-| xcms         |     117089 |     113915 |     145700 | after | self  |
-| mzR          |  614742149 |  610052770 |  621293289 | pkg   | other |
-| mzR          | 4169187196 | 4074939230 | 4356948417 | after | other |
-| BiocGenerics |  128901730 |  125557062 |  130745128 | pkg   | other |
-| BiocGenerics | 4652948336 | 4604747406 | 4785330220 | after | other |
+| xcms         | 4778278343 | 4681984630 | 5778610598 | pkg   | self  |
+| xcms         |     107462 |      84889 |     120001 | after | self  |
+| mzR          |  534137265 |  525806550 |  541874685 | pkg   | other |
+| mzR          | 4214925198 | 4191767504 | 4438095791 | after | other |
+| BiocGenerics |  109121244 |  107433789 |  112863680 | pkg   | other |
+| BiocGenerics | 4599559517 | 4573516876 | 4704692609 | after | other |
 
 We can use the `pkg` entries to see which dependencies actually take a
 long time to load, possibly contributing to the long load time of our
