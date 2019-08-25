@@ -19,6 +19,8 @@
 #' @export
 #' @importFrom microbenchmark microbenchmark
 #' @importFrom furrr future_map_dbl
+#' @importFrom purrr map map_dbl imap_dfr
+#' @importFrom stats median
 #' @return data.frame
 dependency_timings = function(package, n_rep = 5, progress = TRUE){
   dont_detach = c("methods", "utils")
@@ -38,7 +40,7 @@ dependency_timings = function(package, n_rep = 5, progress = TRUE){
   names(timings) = time_packages
   time_df = purrr::imap_dfr(timings, function(.x, .y){
     data.frame(package = .y,
-               med = c(median(.x$pkg), median(.x$after)),
+               med = c(stats::median(.x$pkg), stats::median(.x$after)),
                min = c(min(.x$pkg), min(.x$after)),
                max = c(max(.x$pkg), max(.x$after)),
                type = c("pkg", "after"),
@@ -53,14 +55,14 @@ dependency_timings = function(package, n_rep = 5, progress = TRUE){
 
 
 pkg_timing = function(pkg){
-  library("methods", character.only = TRUE)
+  requireNamespace("methods")
 
   time = microbenchmark::microbenchmark(library(pkg, character.only = TRUE), times = 1)
   time$time
 }
 
 after_timing = function(pkg1, pkg2){
-  library("methods", character.only = TRUE)
+  requireNamespace("methods")
   library(pkg1, character.only = TRUE)
   time = microbenchmark::microbenchmark(library(pkg2, character.only = TRUE), times = 1)
   time$time
