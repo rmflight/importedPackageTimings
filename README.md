@@ -6,6 +6,8 @@ status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](htt
 
 # dependencyTimings
 
+Website: <https://rmflight.github.io/dependencyTimings>
+
 The goal of `dependencyTimings` is to help developers determine if any
 of the R packages their package depends on make loading their package
 slow.
@@ -84,3 +86,13 @@ ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "other"),
 ```
 
 <img src="man/figures/README-show_after-1.png" width="100%" />
+
+## License
+
+Licensed under the MIT license, with no warranty.
+
+## Code of Conduct
+
+Please note that the ‘dependencyTimings’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
