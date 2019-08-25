@@ -16,3 +16,7 @@ Imports:
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/rmflight/dependencyTimings
 BugReports: https://github.com/rmflight/dependencyTimings/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
