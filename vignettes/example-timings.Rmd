@@ -53,7 +53,8 @@ to load (type = `pkg`), and then the time required for the package to load after
 the dependency (type = `after`).
 
 ```{r show_table, results = 'asis'}
-data(xcms_time)
+library(dependencyTimings)
+data("xcms_time")
 knitr::kable(head(dplyr::select(xcms_time, -timings)))
 ```
 
