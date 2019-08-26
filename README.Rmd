@@ -32,7 +32,7 @@ reliable timings), the times seem to be reliable.
 Currently, `dependencyTimings` only exists on Github, so install it with:
 
 ```{r install, eval=FALSE}
-remotes::install_github("rmflight/dependencyTimings")
+remotes::install_github("rmflight/importedPackageTimings")
 ```
 
 ## Supported Platforms

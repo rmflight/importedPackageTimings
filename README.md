@@ -25,7 +25,7 @@ Currently, `dependencyTimings` only exists on Github, so install it
 with:
 
 ``` r
-remotes::install_github("rmflight/dependencyTimings")
+remotes::install_github("rmflight/importedPackageTimings")
 ```
 
 ## Supported Platforms
