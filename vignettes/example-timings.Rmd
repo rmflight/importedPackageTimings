@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 ## Purpose
 
-The goal of `dependencyTimings` is to help developers determine if any of the
+The goal of `importedPackageTimings` is to help developers determine if any of the
 R packages their package depends on make loading their package slow.
 
 To accompmlish this, it uses independent R sessions from the `future` package

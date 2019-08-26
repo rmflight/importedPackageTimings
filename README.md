@@ -28,6 +28,20 @@ with:
 remotes::install_github("rmflight/dependencyTimings")
 ```
 
+## Supported Platforms
+
+**Warning**: This package has only been tested on `Linux`, using the
+`future` and the `multiprocess` backend. I think this should work on
+`Mac` without any issues. I’m not sure which backend should be used on
+`Windows` such that each call to `furrr::future_map_dbl` is launching a
+new R sub-process that will be completely clean.
+
+The way to know if the code is working correctly is to look at the
+consistency of the `timings` returned from `imported_timings` for a
+sufficiently long imported package. They should be very consistent. If
+the process is *not* new, then the first timing will be long, and
+subsequent ones much, much shorter.
+
 ## Example
 
 For example, lets look at a Bioconductor package I’ve seen take a long
@@ -37,7 +51,7 @@ time to load, `xcms`.
 # not run
 library(furrr)
 plan(multiprocess)
-library(dependencyTimings)
+library(importedPackageTimings)
 xcms_time = dependency_timings("xcms")
 ```
 

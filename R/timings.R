@@ -1,8 +1,8 @@
-#' get timings for dependencies
+#' get timings for imports
 #'
 #' Given a package name, attempts to time how long it takes to load the package
-#' via library, and then the time for each of the dependencies. This should
-#' provide some estimate of which package might be making your package take
+#' via library, and then the time for each of the imported packages (see `get_imports`).
+#' This should provide some estimate of which package might be making your package take
 #' a while to load.
 #'
 #' @param package which package to investigate
@@ -22,7 +22,7 @@
 #' @importFrom purrr map map_dbl imap_dfr
 #' @importFrom stats median
 #' @return data.frame
-dependency_timings = function(package, n_rep = 5, progress = TRUE){
+imported_timings = function(package, n_rep = 5, progress = TRUE){
   dont_detach = c("methods", "utils")
   imports = get_package_imports(package)
   time_packages = c(package, imports)
@@ -46,7 +46,7 @@ dependency_timings = function(package, n_rep = 5, progress = TRUE){
                type = c("pkg", "after"),
                stringsAsFactors = FALSE)
   })
-  time_df$which = "other"
+  time_df$which = "import"
   time_df[time_df$package %in% package, "which"] = "self"
   time_df$timings = timings
 

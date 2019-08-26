@@ -1,13 +1,14 @@
-#' get package imports
+#' get imported packages
 #'
-#' given a package name, extracts everything from the imports field.
+#' given a package name, extracts everything from the *Imports* and *Depends*
+#' fields.
 #'
 #' @param package the name of the package for the imports
 #'
 #' @export
 #' @importFrom utils packageDescription
 #' @return character
-get_package_imports = function(package){
+get_imports = function(package){
   desc = utils::packageDescription(package)
 
   cat_imports = c(desc$Imports, desc$Depends)

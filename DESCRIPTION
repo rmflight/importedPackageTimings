@@ -1,10 +1,10 @@
-Package: dependencyTimings
+Package: importedPackageTimings
 Type: Package
-Title: Time combinations of loading packages
+Title: Benchmark Load Timings of Imported Packages
 Version: 0.0.1
 Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email = "rflight79@gmail.com", role = c("aut", "cre")))
-Description: To determine which package dependencies might be contributing to long loading
-    times, profiles loading times of package dependencies in independent R sessions.
+Description: To determine which package dependencies (imports) might be contributing to long loading
+    times, profiles loading times of package imports in independent R sessions.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -24,5 +24,6 @@ Suggests:
     rmarkdown,
     dplyr,
     ggplot2,
-    methods
+    methods,
+    testthat
 VignetteBuilder: knitr
