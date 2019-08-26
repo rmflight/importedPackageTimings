@@ -17,8 +17,8 @@ Imports:
     stats,
     purrr
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/rmflight/dependencyTimings
-BugReports: https://github.com/rmflight/dependencyTimings/issues
+URL: https://github.com/rmflight/importedPackageTimings
+BugReports: https://github.com/rmflight/importedPackageTimings/issues
 Suggests: 
     knitr,
     rmarkdown,

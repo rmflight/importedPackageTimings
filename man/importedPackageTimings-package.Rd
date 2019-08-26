@@ -12,8 +12,8 @@ To determine which package dependencies (imports) might be contributing to long 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/rmflight/dependencyTimings}
-  \item Report bugs at \url{https://github.com/rmflight/dependencyTimings/issues}
+  \item \url{https://github.com/rmflight/importedPackageTimings}
+  \item Report bugs at \url{https://github.com/rmflight/importedPackageTimings/issues}
 }
 
 }

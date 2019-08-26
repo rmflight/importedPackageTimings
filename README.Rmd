@@ -29,7 +29,7 @@ reliable timings), the times seem to be reliable.
 
 ## Installation
 
-Currently, `dependencyTimings` only exists on Github, so install it with:
+Currently, `importedPackageTimings` only exists on Github, so install it with:
 
 ```{r install, eval=FALSE}
 remotes::install_github("rmflight/importedPackageTimings")
@@ -70,7 +70,7 @@ data(xcms_time)
 knitr::kable(head(dplyr::select(xcms_time, -timings)))
 ```
 
-We can use the `pkg` entries to see which dependencies actually take a long time
+We can use the `pkg` entries to see which imports actually take a long time
 to load, possibly contributing to the long load time of our package in question.
 
 ```{r show_pkg}
@@ -83,7 +83,7 @@ ggplot(dplyr::filter(xcms_time, type %in% "pkg"),
 From this plot, we can see that `MSnbase` looks like it is taking the longest to
 load outside of `xcms` itself. 
 
-We can use the `after` entries to see which dependencies after loading have the
+We can use the `after` entries to see which imports after loading have the
 smallest time to load our package in question, which also implies they may be the
 culprit causing long load times.
 

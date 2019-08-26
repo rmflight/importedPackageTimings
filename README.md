@@ -21,7 +21,7 @@ reliable.
 
 ## Installation
 
-Currently, `dependencyTimings` only exists on Github, so install it
+Currently, `importedPackageTimings` only exists on Github, so install it
 with:
 
 ``` r
@@ -73,9 +73,9 @@ knitr::kable(head(dplyr::select(xcms_time, -timings)))
 | BiocGenerics |  146176624 |  132330703 |  160247180 | pkg   | import |
 | BiocGenerics | 4520280675 | 4330646417 | 4579202503 | after | import |
 
-We can use the `pkg` entries to see which dependencies actually take a
-long time to load, possibly contributing to the long load time of our
-package in question.
+We can use the `pkg` entries to see which imports actually take a long
+time to load, possibly contributing to the long load time of our package
+in question.
 
 ``` r
 library(ggplot2)
@@ -89,9 +89,9 @@ ggplot(dplyr::filter(xcms_time, type %in% "pkg"),
 From this plot, we can see that `MSnbase` looks like it is taking the
 longest to load outside of `xcms` itself.
 
-We can use the `after` entries to see which dependencies after loading
-have the smallest time to load our package in question, which also
-implies they may be the culprit causing long load times.
+We can use the `after` entries to see which imports after loading have
+the smallest time to load our package in question, which also implies
+they may be the culprit causing long load times.
 
 ``` r
 ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "import"),
