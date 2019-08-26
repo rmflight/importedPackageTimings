@@ -6,7 +6,7 @@ status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](htt
 
 # importedPackageTimings
 
-Website: <https://rmflight.github.io/dependencyTimings>
+Website: <https://rmflight.github.io/importedPackageTimings>
 
 The goal of `dependencyTimings` is to help developers determine if any
 of the R packages their package depends on make loading their package
