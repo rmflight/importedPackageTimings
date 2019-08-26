@@ -8,9 +8,9 @@ status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](htt
 
 Website: <https://rmflight.github.io/importedPackageTimings>
 
-The goal of `dependencyTimings` is to help developers determine if any
-of the R packages their package depends on make loading their package
-slow.
+The goal of `importedPackageTimings` is to help R package developers
+determine if any of the R packages their package depends on (i.e.
+`imports`) make loading their own package slow.
 
 To accompmlish this, it uses independent R sessions from the `future`
 package to time how long it takes to load each of the packages listed in
@@ -90,8 +90,8 @@ From this plot, we can see that `MSnbase` looks like it is taking the
 longest to load outside of `xcms` itself.
 
 We can use the `after` entries to see which dependencies after loading
-have the smallest time to load our package in question, which implies
-they may be the culprit causing long load times.
+have the smallest time to load our package in question, which also
+implies they may be the culprit causing long load times.
 
 ``` r
 ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "import"),
