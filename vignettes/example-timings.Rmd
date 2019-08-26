@@ -76,7 +76,7 @@ smallest time to load our package in question, which implies they may be the
 culprit causing long load times.
 
 ```{r show_after}
-ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "other"),
+ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "import"),
        aes(x = min / 1e9, y = package)) +
   geom_point()
 ```

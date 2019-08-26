@@ -88,7 +88,7 @@ smallest time to load our package in question, which implies they may be the
 culprit causing long load times.
 
 ```{r show_after}
-ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "other"),
+ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "import"),
        aes(x = min / 1e9, y = package)) +
   geom_point()
 ```
@@ -99,4 +99,4 @@ Licensed under the MIT license, with no warranty.
 
 ## Code of Conduct
 
-Please note that the 'dependencyTimings' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the `importedPackageTimings` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.

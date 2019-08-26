@@ -1,0 +1,29 @@
+Package: importedPackageTimings
+Type: Package
+Title: Benchmark Load Timings of Imported Packages
+Version: 0.0.1
+Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email = "rflight79@gmail.com", role = c("aut", "cre")))
+Description: To determine which package dependencies (imports) might be contributing to long loading
+    times, profiles loading times of package imports in independent R sessions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Depends: R (>= 2.10)
+Imports: 
+    microbenchmark,
+    utils,
+    furrr,
+    stats,
+    purrr
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/rmflight/dependencyTimings
+BugReports: https://github.com/rmflight/dependencyTimings/issues
+Suggests: 
+    knitr,
+    rmarkdown,
+    dplyr,
+    ggplot2,
+    methods,
+    testthat
+VignetteBuilder: knitr

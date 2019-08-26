@@ -24,7 +24,7 @@
 #' @return data.frame
 imported_timings = function(package, n_rep = 5, progress = TRUE){
   dont_detach = c("methods", "utils")
-  imports = get_package_imports(package)
+  imports = get_imports(package)
   time_packages = c(package, imports)
   time_packages = time_packages[!(time_packages %in% dont_detach)]
 

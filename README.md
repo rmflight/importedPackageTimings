@@ -64,14 +64,14 @@ data(xcms_time)
 knitr::kable(head(dplyr::select(xcms_time, -timings)))
 ```
 
-| package      |        med |        min |        max | type  | which |
-| :----------- | ---------: | ---------: | ---------: | :---- | :---- |
-| xcms         | 4778278343 | 4681984630 | 5778610598 | pkg   | self  |
-| xcms         |     107462 |      84889 |     120001 | after | self  |
-| mzR          |  534137265 |  525806550 |  541874685 | pkg   | other |
-| mzR          | 4214925198 | 4191767504 | 4438095791 | after | other |
-| BiocGenerics |  109121244 |  107433789 |  112863680 | pkg   | other |
-| BiocGenerics | 4599559517 | 4573516876 | 4704692609 | after | other |
+| package      |        med |        min |        max | type  | which  |
+| :----------- | ---------: | ---------: | ---------: | :---- | :----- |
+| xcms         | 4777753784 | 4540154629 | 5047299157 | pkg   | self   |
+| xcms         |     120612 |     118835 |     153174 | after | self   |
+| mzR          |  695070041 |  654965228 |  726937410 | pkg   | import |
+| mzR          | 4188562694 | 4100112954 | 4393323772 | after | import |
+| BiocGenerics |  146176624 |  132330703 |  160247180 | pkg   | import |
+| BiocGenerics | 4520280675 | 4330646417 | 4579202503 | after | import |
 
 We can use the `pkg` entries to see which dependencies actually take a
 long time to load, possibly contributing to the long load time of our
@@ -94,7 +94,7 @@ have the smallest time to load our package in question, which implies
 they may be the culprit causing long load times.
 
 ``` r
-ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "other"),
+ggplot(dplyr::filter(xcms_time, type %in% "after", which %in% "import"),
        aes(x = min / 1e9, y = package)) +
   geom_point()
 ```
@@ -107,6 +107,6 @@ Licensed under the MIT license, with no warranty.
 
 ## Code of Conduct
 
-Please note that the ‘dependencyTimings’ project is released with a
+Please note that the `importedPackageTimings` project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
 this project, you agree to abide by its terms.
