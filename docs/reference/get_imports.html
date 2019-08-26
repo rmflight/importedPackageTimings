@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Timings for xcms dependencies — xcms_time • importedPackageTimings</title>
+<title>get imported packages — get_imports • importedPackageTimings</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,10 @@
 
 
 
-<meta property="og:title" content="Timings for xcms dependencies — xcms_time" />
+<meta property="og:title" content="get imported packages — get_imports" />
 
-<meta property="og:description" content="A dataset containing the library(pkg) timings for the dependencies of
-the xcms package." />
+<meta property="og:description" content="given a package name, extracts everything from the Imports and Depends
+fields." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,45 +112,41 @@ the xcms package." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Timings for xcms dependencies</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/xcms_time.R'><code>R/xcms_time.R</code></a></small>
-    <div class="hidden name"><code>xcms_time.Rd</code></div>
+    <h1>get imported packages</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/imports.R'><code>R/imports.R</code></a></small>
+    <div class="hidden name"><code>get_imports.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A dataset containing the <code><a href='https://www.rdocumentation.org/packages/base/topics/library'>library(pkg)</a></code> timings for the dependencies of
-the <code>xcms</code> package.</p>
+    <p>given a package name, extracts everything from the <em>Imports</em> and <em>Depends</em>
+fields.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>xcms_time</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 26 rows and 7 variables:</p><dl class='dl-horizontal'>
-<dt>package</dt><dd><p>which package it is</p></dd>
-<dt>med</dt><dd><p>median timings in microseconds</p></dd>
-<dt>min</dt><dd><p>minimum load time in microseconds</p></dd>
-<dt>max</dt><dd><p>maximum load time</p></dd>
-<dt>type</dt><dd><p>load time for the dependency (pkg), or for the package after loading the dependency (after)</p></dd>
-<dt>which</dt><dd><p>the package or a dependency</p></dd>
-<dt>timings</dt><dd><p>the raw times for each replicate</p></dd>
-</dl>
+    <pre class="usage"><span class='fu'>get_imports</span>(<span class='no'>package</span>)</pre>
     
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>package</th>
+      <td><p>the name of the package for the imports</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Rober M Flight on personal machine</p>
+    <p>character</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
+      <li><a href="#value">Value</a></li>
           </ul>
 
   </div>

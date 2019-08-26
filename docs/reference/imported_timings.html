@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Timings for xcms dependencies — xcms_time • importedPackageTimings</title>
+<title>get timings for imports — imported_timings • importedPackageTimings</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,12 @@
 
 
 
-<meta property="og:title" content="Timings for xcms dependencies — xcms_time" />
+<meta property="og:title" content="get timings for imports — imported_timings" />
 
-<meta property="og:description" content="A dataset containing the library(pkg) timings for the dependencies of
-the xcms package." />
+<meta property="og:description" content="Given a package name, attempts to time how long it takes to load the package
+via library, and then the time for each of the imported packages (see get_imports).
+This should provide some estimate of which package might be making your package take
+a while to load." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,45 +114,62 @@ the xcms package." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Timings for xcms dependencies</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/xcms_time.R'><code>R/xcms_time.R</code></a></small>
-    <div class="hidden name"><code>xcms_time.Rd</code></div>
+    <h1>get timings for imports</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/timings.R'><code>R/timings.R</code></a></small>
+    <div class="hidden name"><code>imported_timings.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A dataset containing the <code><a href='https://www.rdocumentation.org/packages/base/topics/library'>library(pkg)</a></code> timings for the dependencies of
-the <code>xcms</code> package.</p>
+    <p>Given a package name, attempts to time how long it takes to load the package
+via library, and then the time for each of the imported packages (see <code>get_imports</code>).
+This should provide some estimate of which package might be making your package take
+a while to load.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>xcms_time</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 26 rows and 7 variables:</p><dl class='dl-horizontal'>
-<dt>package</dt><dd><p>which package it is</p></dd>
-<dt>med</dt><dd><p>median timings in microseconds</p></dd>
-<dt>min</dt><dd><p>minimum load time in microseconds</p></dd>
-<dt>max</dt><dd><p>maximum load time</p></dd>
-<dt>type</dt><dd><p>load time for the dependency (pkg), or for the package after loading the dependency (after)</p></dd>
-<dt>which</dt><dd><p>the package or a dependency</p></dd>
-<dt>timings</dt><dd><p>the raw times for each replicate</p></dd>
-</dl>
+    <pre class="usage"><span class='fu'>imported_timings</span>(<span class='no'>package</span>, <span class='kw'>n_rep</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>package</th>
+      <td><p>which package to investigate</p></td>
+    </tr>
+    <tr>
+      <th>n_rep</th>
+      <td><p>how many times to do it</p></td>
+    </tr>
+    <tr>
+      <th>progress</th>
+      <td><p>should the package be displayed as it's done</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Rober M Flight on personal machine</p>
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>For each of the package and it's imported and dependent packages, the
+time required to load the package via <code><a href='https://www.rdocumentation.org/packages/base/topics/library'>library()</a></code> is recorded in a sub-process
+(set using <code><a href='https://www.rdocumentation.org/packages/future/topics/plan'>future::plan()</a></code>), for the defined number of replicates. Two timings
+are recorded, the time to load the package or dependency directly, and then
+the time to load the <code>package</code> <strong>after</strong> loading the dependency. These are
+<em>pkg</em> and <em>after</em> in the returned data.frame.</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
+      <li><a href="#value">Value</a></li>
 
-      <li><a href="#source">Source</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

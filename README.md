@@ -4,7 +4,7 @@
 [![Travis build
 status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](https://travis-ci.org/rmflight/dependencyTimings)
 
-# dependencyTimings
+# importedPackageTimings
 
 Website: <https://rmflight.github.io/dependencyTimings>
 

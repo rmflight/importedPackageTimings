@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Timings for xcms dependencies — xcms_time • importedPackageTimings</title>
+<title>importedPackageTimings: Benchmark Load Timings of Imported Packages — importedPackageTimings-package • importedPackageTimings</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,10 @@
 
 
 
-<meta property="og:title" content="Timings for xcms dependencies — xcms_time" />
+<meta property="og:title" content="importedPackageTimings: Benchmark Load Timings of Imported Packages — importedPackageTimings-package" />
 
-<meta property="og:description" content="A dataset containing the library(pkg) timings for the dependencies of
-the xcms package." />
+<meta property="og:description" content="To determine which package dependencies (imports) might be contributing to long loading
+    times, profiles loading times of package imports in independent R sessions." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,35 +112,25 @@ the xcms package." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Timings for xcms dependencies</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/xcms_time.R'><code>R/xcms_time.R</code></a></small>
-    <div class="hidden name"><code>xcms_time.Rd</code></div>
+    <h1>importedPackageTimings: Benchmark Load Timings of Imported Packages</h1>
+    <small class="dont-index">Source: <a href='https://github.com/rmflight/dependencyTimings/blob/master/R/dependencyTimings-package.R'><code>R/dependencyTimings-package.R</code></a></small>
+    <div class="hidden name"><code>importedPackageTimings-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A dataset containing the <code><a href='https://www.rdocumentation.org/packages/base/topics/library'>library(pkg)</a></code> timings for the dependencies of
-the <code>xcms</code> package.</p>
+    <p>To determine which package dependencies (imports) might be contributing to long loading
+    times, profiles loading times of package imports in independent R sessions.</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>xcms_time</span></pre>
         
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>A data frame with 26 rows and 7 variables:</p><dl class='dl-horizontal'>
-<dt>package</dt><dd><p>which package it is</p></dd>
-<dt>med</dt><dd><p>median timings in microseconds</p></dd>
-<dt>min</dt><dd><p>minimum load time in microseconds</p></dd>
-<dt>max</dt><dd><p>maximum load time</p></dd>
-<dt>type</dt><dd><p>load time for the dependency (pkg), or for the package after loading the dependency (after)</p></dd>
-<dt>which</dt><dd><p>the package or a dependency</p></dd>
-<dt>timings</dt><dd><p>the raw times for each replicate</p></dd>
-</dl>
-    
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>Rober M Flight on personal machine</p>
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://github.com/rmflight/dependencyTimings'>https://github.com/rmflight/dependencyTimings</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/rmflight/dependencyTimings/issues'>https://github.com/rmflight/dependencyTimings/issues</a></p></li>
+</ul></div>
     
 
   </div>
@@ -148,11 +138,11 @@ the <code>xcms</code> package.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
+      <li><a href="#see-also">See also</a></li>
           </ul>
 
+    <h2>Author</h2>
+    <p><strong>Maintainer</strong>: Robert M Flight <a href='mailto:rflight79@gmail.com'>rflight79@gmail.com</a></p>
   </div>
 </div>
 
