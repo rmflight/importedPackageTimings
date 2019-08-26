@@ -52,7 +52,7 @@ time to load, `xcms`.
 library(furrr)
 plan(multiprocess)
 library(importedPackageTimings)
-xcms_time = dependency_timings("xcms")
+xcms_time = imported_timings("xcms")
 ```
 
 The package provides two types of timings, the time required for the

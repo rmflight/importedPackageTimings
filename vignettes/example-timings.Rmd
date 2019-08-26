@@ -44,8 +44,8 @@ load, `xcms`.
 # not run
 library(furrr)
 plan(multiprocess)
-library(dependencyTimings)
-xcms_time = dependency_timings("xcms")
+library(importedPackageTimings)
+xcms_time = imported_timings("xcms")
 ```
 
 The package provides two types of timings, the time required for the dependency
@@ -53,7 +53,7 @@ to load (type = `pkg`), and then the time required for the package to load after
 the dependency (type = `after`).
 
 ```{r show_table, results = 'asis'}
-library(dependencyTimings)
+library(importedPackageTimings)
 data("xcms_time")
 knitr::kable(head(dplyr::select(xcms_time, -timings)))
 ```

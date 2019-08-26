@@ -108,10 +108,10 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># not run</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(furrr)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">plan</span>(multiprocess)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dependencyTimings)</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">xcms_time =<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/dependencyTimings/topics/dependency_timings">dependency_timings</a></span>(<span class="st">"xcms"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(importedPackageTimings)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">xcms_time =<span class="st"> </span><span class="kw"><a href="../reference/imported_timings.html">imported_timings</a></span>(<span class="st">"xcms"</span>)</a></code></pre></div>
 <p>The package provides two types of timings, the time required for the dependency to load (type = <code>pkg</code>), and then the time required for the package to load after the dependency (type = <code>after</code>).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dependencyTimings)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(importedPackageTimings)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(<span class="st">"xcms_time"</span>)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3">knitr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(xcms_time, <span class="op">-</span>timings)))</a></code></pre></div>
 <table class="table">
@@ -126,51 +126,51 @@
 <tbody>
 <tr class="odd">
 <td align="left">xcms</td>
-<td align="right">4778278343</td>
-<td align="right">4681984630</td>
-<td align="right">5778610598</td>
+<td align="right">4777753784</td>
+<td align="right">4540154629</td>
+<td align="right">5047299157</td>
 <td align="left">pkg</td>
 <td align="left">self</td>
 </tr>
 <tr class="even">
 <td align="left">xcms</td>
-<td align="right">107462</td>
-<td align="right">84889</td>
-<td align="right">120001</td>
+<td align="right">120612</td>
+<td align="right">118835</td>
+<td align="right">153174</td>
 <td align="left">after</td>
 <td align="left">self</td>
 </tr>
 <tr class="odd">
 <td align="left">mzR</td>
-<td align="right">534137265</td>
-<td align="right">525806550</td>
-<td align="right">541874685</td>
+<td align="right">695070041</td>
+<td align="right">654965228</td>
+<td align="right">726937410</td>
 <td align="left">pkg</td>
-<td align="left">other</td>
+<td align="left">import</td>
 </tr>
 <tr class="even">
 <td align="left">mzR</td>
-<td align="right">4214925198</td>
-<td align="right">4191767504</td>
-<td align="right">4438095791</td>
+<td align="right">4188562694</td>
+<td align="right">4100112954</td>
+<td align="right">4393323772</td>
 <td align="left">after</td>
-<td align="left">other</td>
+<td align="left">import</td>
 </tr>
 <tr class="odd">
 <td align="left">BiocGenerics</td>
-<td align="right">109121244</td>
-<td align="right">107433789</td>
-<td align="right">112863680</td>
+<td align="right">146176624</td>
+<td align="right">132330703</td>
+<td align="right">160247180</td>
 <td align="left">pkg</td>
-<td align="left">other</td>
+<td align="left">import</td>
 </tr>
 <tr class="even">
 <td align="left">BiocGenerics</td>
-<td align="right">4599559517</td>
-<td align="right">4573516876</td>
-<td align="right">4704692609</td>
+<td align="right">4520280675</td>
+<td align="right">4330646417</td>
+<td align="right">4579202503</td>
 <td align="left">after</td>
-<td align="left">other</td>
+<td align="left">import</td>
 </tr>
 </tbody>
 </table>
