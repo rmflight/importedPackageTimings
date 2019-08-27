@@ -1,0 +1,5 @@
+Package: a test package (from devtools dcf)
+Title: Testing importedPackageTimings
+Depends: R (>= 3.0.2)
+Imports: callr, cli, digest
+Suggests: BiocInstaller, BiocManager, bitops

@@ -1,7 +1,7 @@
 Package: importedPackageTimings
 Type: Package
 Title: Benchmark Load Timings of Imported Packages
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email = "rflight79@gmail.com", role = c("aut", "cre")))
 Description: To determine which package dependencies (imports) might be contributing to long loading
     times, profiles loading times of package imports in independent R sessions.
@@ -25,5 +25,6 @@ Suggests:
     dplyr,
     ggplot2,
     methods,
-    testthat
+    testthat,
+    covr
 VignetteBuilder: knitr

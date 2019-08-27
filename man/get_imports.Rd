@@ -4,10 +4,12 @@
 \alias{get_imports}
 \title{get imported packages}
 \usage{
-get_imports(package)
+get_imports(package, suggests = FALSE)
 }
 \arguments{
 \item{package}{the name of the package for the imports}
+
+\item{suggests}{should the packages in suggests be returned (default = FALSE)}
 }
 \value{
 character

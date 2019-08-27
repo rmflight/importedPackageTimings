@@ -4,10 +4,15 @@
 \alias{imported_timings}
 \title{get timings for imports}
 \usage{
-imported_timings(package, n_rep = 5, progress = TRUE)
+imported_timings(package, imports = TRUE, suggests = FALSE,
+  n_rep = 5, progress = TRUE)
 }
 \arguments{
 \item{package}{which package to investigate}
+
+\item{imports}{should the imports be timed too (default = TRUE)}
+
+\item{suggests}{should the packages in suggests be added (default = FALSE)}
 
 \item{n_rep}{how many times to do it}
 
@@ -18,7 +23,7 @@ data.frame
 }
 \description{
 Given a package name, attempts to time how long it takes to load the package
-via library, and then the time for each of the imported packages (see \code{get_imports}).
+via library, and then the time for each of the imported packages (see \code{\link{get_imports}}).
 This should provide some estimate of which package might be making your package take
 a while to load.
 }
@@ -29,4 +34,27 @@ time required to load the package via \code{library()} is recorded in a sub-proc
 are recorded, the time to load the package or dependency directly, and then
 the time to load the \code{package} \strong{after} loading the dependency. These are
 \emph{pkg} and \emph{after} in the returned data.frame.
+
+You can also run library timings for lists of packages directly, which may be
+more useful to quickly narrow down issues with imported timings. This can
+be via a character list of packages, or reading from a DESCRIPTION type file.
+}
+\examples{
+\dontrun{
+# not run
+library(importedPackageTimings)
+library(furrr)
+plan(multiprocess)
+
+# normal running for an installed package
+devtools_time = imported_timings("devtools")
+
+# run the suggested packages too
+devtools_suggests = imported_timings("devtools", suggests = TRUE)
+
+# time particular packages
+only_devtools = imported_timings("devtools", imports = FALSE)
+particular_packages = imported_timings(c("cli", "rlang"))
+}
+
 }

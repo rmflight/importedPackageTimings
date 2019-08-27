@@ -3,6 +3,8 @@
 
 [![Travis build
 status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](https://travis-ci.org/rmflight/dependencyTimings)
+[![Coverage
+status](https://codecov.io/gh/rmflight/importedPackageTimings/branch/master/graph/badge.svg)](https://codecov.io/github/rmflight/importedPackageTimings?branch=master)
 
 # importedPackageTimings
 
