@@ -48,3 +48,7 @@ test_that("list from dcf works", {
   expect_equal(nrow(timings_dcf), 3)
 })
 
+test_that("giving a non-existent package works", {
+  expect_error(imported_timings("ridiculouspackagenamethatshouldntexist"))
+})
+

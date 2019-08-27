@@ -10,6 +10,7 @@
 #' @importFrom utils packageDescription
 #' @return character
 get_imports = function(package, suggests = FALSE){
+  installed_packages = rownames(utils::installed.packages())
   if (file.exists(package)) {
     tmp = read.dcf(package)
     desc = list(Imports = tmp[1, "Imports"], Depends = tmp[1, "Depends"])
@@ -17,7 +18,11 @@ get_imports = function(package, suggests = FALSE){
       desc$Suggests = tmp[1, "Suggests"]
     }
   } else {
-    desc = utils::packageDescription(package)
+    if (package %in% installed_packages) {
+      desc = as.list(utils::packageDescription(package))
+    } else {
+      stop(paste0(package, " is not an installed package!"))
+    }
   }
 
   cat_imports = c(desc$Imports, desc$Depends)

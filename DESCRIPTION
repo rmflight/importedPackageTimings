@@ -26,5 +26,7 @@ Suggests:
     ggplot2,
     methods,
     testthat,
-    covr
+    covr,
+    callr,
+    devtools
 VignetteBuilder: knitr
