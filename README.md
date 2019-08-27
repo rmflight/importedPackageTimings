@@ -2,7 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis build
-status](https://travis-ci.org/rmflight/dependencyTimings.svg?branch=master)](https://travis-ci.org/rmflight/importedPackageTimings)
+status](https://travis-ci.org/rmflight/importedPackageTimings.svg?branch=master)](https://travis-ci.org/rmflight/importedPackageTimings)
 [![Coverage
 status](https://codecov.io/gh/rmflight/importedPackageTimings/branch/master/graph/badge.svg)](https://codecov.io/github/rmflight/importedPackageTimings?branch=master)
 
