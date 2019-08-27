@@ -41,6 +41,9 @@
 #' # time particular packages
 #' only_devtools = imported_timings("devtools", imports = FALSE)
 #' particular_packages = imported_timings(c("cli", "rlang"))
+#'
+#' # from a dcf file (i.e. package DESCRIPTION file)
+#' dcf_timings = imported_timings("path2file")
 #' }
 #'
 #' @export

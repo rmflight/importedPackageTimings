@@ -174,11 +174,12 @@ the time to load the <code>package</code> <strong>after</strong> loading the dep
 <p>You can also run library timings for lists of packages directly, which may be
 more useful to quickly narrow down issues with imported timings. This can
 be via a character list of packages, or reading from a DESCRIPTION type file.</p>
+<p>Note: To time a single package, <code>imports = FALSE</code> must be used. For timing
+multiple packages, <code>imports</code> will automatically be set to <code>FALSE</code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='co'># not run</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>importedPackageTimings</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>furrr</span>)
 <span class='fu'>plan</span>(<span class='no'>multiprocess</span>)
@@ -192,6 +193,9 @@ be via a character list of packages, or reading from a DESCRIPTION type file.</p
 <span class='co'># time particular packages</span>
 <span class='no'>only_devtools</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='st'>"devtools"</span>, <span class='kw'>imports</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 <span class='no'>particular_packages</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"cli"</span>, <span class='st'>"rlang"</span>))
+
+<span class='co'># from a dcf file (i.e. package DESCRIPTION file)</span>
+<span class='no'>dcf_timings</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='st'>"path2file"</span>)
 <span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
