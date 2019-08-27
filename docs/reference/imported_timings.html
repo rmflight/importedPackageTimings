@@ -66,7 +66,7 @@ a while to load." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">importedPackageTimings</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2</span>
       </span>
     </div>
 
@@ -92,6 +92,9 @@ a while to load." />
       <a href="../articles/example-timings.html">Example Timings</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -122,13 +125,14 @@ a while to load." />
     <div class="ref-description">
     
     <p>Given a package name, attempts to time how long it takes to load the package
-via library, and then the time for each of the imported packages (see <code>get_imports</code>).
+via library, and then the time for each of the imported packages (see <code><a href='get_imports.html'>get_imports</a></code>).
 This should provide some estimate of which package might be making your package take
 a while to load.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>imported_timings</span>(<span class='no'>package</span>, <span class='kw'>n_rep</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>imported_timings</span>(<span class='no'>package</span>, <span class='kw'>imports</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>n_rep</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,6 +140,14 @@ a while to load.</p>
     <tr>
       <th>package</th>
       <td><p>which package to investigate</p></td>
+    </tr>
+    <tr>
+      <th>imports</th>
+      <td><p>should the imports be timed too (default = TRUE)</p></td>
+    </tr>
+    <tr>
+      <th>suggests</th>
+      <td><p>should the packages in suggests be added (default = FALSE)</p></td>
     </tr>
     <tr>
       <th>n_rep</th>
@@ -159,8 +171,29 @@ time required to load the package via <code><a href='https://www.rdocumentation.
 are recorded, the time to load the package or dependency directly, and then
 the time to load the <code>package</code> <strong>after</strong> loading the dependency. These are
 <em>pkg</em> and <em>after</em> in the returned data.frame.</p>
+<p>You can also run library timings for lists of packages directly, which may be
+more useful to quickly narrow down issues with imported timings. This can
+be via a character list of packages, or reading from a DESCRIPTION type file.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='co'># not run</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>importedPackageTimings</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>furrr</span>)
+<span class='fu'>plan</span>(<span class='no'>multiprocess</span>)
+
+<span class='co'># normal running for an installed package</span>
+<span class='no'>devtools_time</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='st'>"devtools"</span>)
+
+<span class='co'># run the suggested packages too</span>
+<span class='no'>devtools_suggests</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='st'>"devtools"</span>, <span class='kw'>suggests</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># time particular packages</span>
+<span class='no'>only_devtools</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='st'>"devtools"</span>, <span class='kw'>imports</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='no'>particular_packages</span> <span class='kw'>=</span> <span class='fu'>imported_timings</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"cli"</span>, <span class='st'>"rlang"</span>))
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -170,7 +203,9 @@ the time to load the <code>package</code> <strong>after</strong> loading the dep
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

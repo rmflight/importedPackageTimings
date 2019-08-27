@@ -38,10 +38,13 @@ the time to load the \code{package} \strong{after} loading the dependency. These
 You can also run library timings for lists of packages directly, which may be
 more useful to quickly narrow down issues with imported timings. This can
 be via a character list of packages, or reading from a DESCRIPTION type file.
+
+Note: To time a single package, \code{imports = FALSE} must be used. For timing
+multiple packages, \code{imports} will automatically be set to \code{FALSE}.
 }
 \examples{
 \dontrun{
-# not run
+
 library(importedPackageTimings)
 library(furrr)
 plan(multiprocess)

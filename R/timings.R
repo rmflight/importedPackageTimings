@@ -22,9 +22,12 @@
 #'  more useful to quickly narrow down issues with imported timings. This can
 #'  be via a character list of packages, or reading from a DESCRIPTION type file.
 #'
+#'  Note: To time a single package, `imports = FALSE` must be used. For timing
+#'  multiple packages, `imports` will automatically be set to `FALSE`.
+#'
 #' @examples
 #' \dontrun{
-#' # not run
+#'
 #' library(importedPackageTimings)
 #' library(furrr)
 #' plan(multiprocess)

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>get imported packages — get_imports • importedPackageTimings</title>
+<title>Changelog • importedPackageTimings</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,11 +30,7 @@
 
 
 
-<meta property="og:title" content="get imported packages — get_imports" />
-
-<meta property="og:description" content="given a package name, extracts everything from the Imports and Depends
-fields." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -51,7 +47,7 @@ fields." />
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -115,48 +111,60 @@ fields." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>get imported packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/rmflight/importedPackageTimings/blob/master/R/imports.R'><code>R/imports.R</code></a></small>
-    <div class="hidden name"><code>get_imports.Rd</code></div>
+      <h1>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/rmflight/importedPackageTimings/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    
-    <p>given a package name, extracts everything from the <em>Imports</em> and <em>Depends</em>
-fields.</p>
-    
-    </div>
-
-    <pre class="usage"><span class='fu'>get_imports</span>(<span class='no'>package</span>, <span class='kw'>suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>package</th>
-      <td><p>the name of the package for the imports</p></td>
-    </tr>
-    <tr>
-      <th>suggests</th>
-      <td><p>should the packages in suggests be returned (default = FALSE)</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>character</p>
-    
-
+    <div id="importedpackagetimings-0-0-2" class="section level1">
+<h1 class="page-header">
+<a href="#importedpackagetimings-0-0-2" class="anchor"></a>importedPackageTimings 0.0.2</h1>
+<ul>
+<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
+<li>
+<code>imported_timings</code> gained two new arguments:
+<ul>
+<li>
+<code>imports</code> to decide if you actually want to time just the package or the package and it’s imports</li>
+<li>
+<code>suggests</code> to decide if you also want to time packages listed in the Suggests field</li>
+</ul>
+</li>
+<li>
+<code>imported_timings</code> can now take one of:
+<ul>
+<li>the name of an installed package to time (the original idea)
+<ul>
+<li>this will time the installed package and it’s imports</li>
+</ul>
+</li>
+<li>the name of an installed package to time only (set <code>imports = FALSE</code>)</li>
+<li>a character vector of package names to time directly (<code>imports</code> will be disabled automatically)</li>
+<li>a path to a DCF (i.e. DESCRIPTION) formatted file with fields for Depends, Imports, and Suggests to take the packages to be timed from</li>
+</ul>
+</li>
+<li>testing added</li>
+<li>code coverage added</li>
+</ul>
+</div>
+    <div id="importedpackagetimings-0-0-1" class="section level1">
+<h1 class="page-header">
+<a href="#importedpackagetimings-0-0-1" class="anchor"></a>importedPackageTimings 0.0.1</h1>
+<ul>
+<li>Initial release!</li>
+</ul>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
-
+    <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#importedpackagetimings-0-0-2">0.0.2</a></li>
+        <li><a href="#importedpackagetimings-0-0-1">0.0.1</a></li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
       <footer>
